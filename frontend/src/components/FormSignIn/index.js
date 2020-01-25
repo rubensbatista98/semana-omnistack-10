@@ -1,8 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+
+import { DevContext } from "../../context/DevContext";
+
+import api from "../../services/api";
 
 import "./style.css";
 
-const FormSignIn = ({ onSubmit }) => {
+const FormSignIn = () => {
+  const [devs, setDevs] = useContext(DevContext);
+
   const [github_username, setGithubUsername] = useState("");
   const [techs, setTechs] = useState("");
   const [latitude, setLatitude] = useState("");
@@ -28,7 +34,11 @@ const FormSignIn = ({ onSubmit }) => {
   async function handleSubmit(event) {
     event.preventDefault();
 
-    await onSubmit({ github_username, techs, latitude, longitude });
+    const newDev = { github_username, techs, latitude, longitude };
+
+    const response = await api.post("/devs", newDev);
+
+    setDevs([...devs, response.data]);
 
     setGithubUsername("");
     setTechs("");

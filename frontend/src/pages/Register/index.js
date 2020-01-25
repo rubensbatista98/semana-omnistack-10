@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import FormSignIn from "../../components/FormSignIn";
 import DevItem from "../../components/DevItem";
+import { DevContext } from "../../context/DevContext";
 
 import "./styles.css";
 
-function Register({ handleAddDev, devs }) {
+function Register({ handleAddDev }) {
+  const [devs] = useContext(DevContext);
+
   return (
     <section className="register-section">
       <aside className="sidebar">
