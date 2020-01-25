@@ -1,7 +1,7 @@
 import React from "react";
 
 import FormSignIn from "../../components/FormSignIn";
-import Main from "../../components/Main";
+import DevItem from "../../components/DevItem";
 
 import "./styles.css";
 
@@ -14,14 +14,14 @@ function Register({ handleAddDev, devs }) {
         <FormSignIn onSubmit={handleAddDev} />
       </aside>
 
-      <Main devs={devs} />
+      <section className="devs-section">
+        <ul className="devs-list">
+          {devs.map(dev => (
+            <DevItem key={dev._id} dev={dev} />
+          ))}
+        </ul>
+      </section>
     </section>
-
-    // <>
-    //   <SidebarApp handleAddDev={handleAddDev} />
-
-    //   <Main devs={devs} />
-    // </>
   );
 }
 
