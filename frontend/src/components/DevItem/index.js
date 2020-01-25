@@ -5,7 +5,7 @@ import "./style.css";
 const DevItem = ({ dev }) => (
   <li className="dev-item">
     <header>
-      <img src={dev.avatar_url} alt={`Avatar do ${dev.name}`} />
+      <img src={dev.avatar_url} alt={`Avatar de ${dev.name}`} />
 
       <div className="dev-info">
         <strong className="name">{dev.name}</strong>

@@ -1,4 +1,4 @@
-.sidebar-app {
+.register-section > .sidebar {
   width: 420px;
   background-color: #ffffff;
   box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.02);
@@ -6,7 +6,7 @@
   padding: 30px 20px;
 }
 
-.sidebar-app > .title {
+.register-section > .sidebar > .title {
   font-size: 20px;
   text-align: center;
   color: #333333;
@@ -14,6 +14,6 @@
   display: block;
 }
 
-.sidebar-app > .form-signin {
+.register-section > .sidebar > .form-signin {
   margin-top: 30px;
 }
