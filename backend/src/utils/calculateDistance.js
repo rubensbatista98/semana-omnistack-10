@@ -21,4 +21,4 @@ function getDistanceFromLatLonInKm(centerCoordinates, pointCoordinates) {
   return distance;
 }
 
-module.exports;
+module.exports = getDistanceFromLatLonInKm;
