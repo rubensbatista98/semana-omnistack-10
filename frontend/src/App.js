@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import SidebarApp from "./components/SidebarApp";
-import Main from "./components/Main";
+import Main from "./pages/Main";
+import Register from "./pages/Register";
 
 import api from "./services/api";
 
@@ -29,9 +30,17 @@ function App() {
 
   return (
     <div id="app">
-      <SidebarApp handleAddDev={handleAddDev} />
-
-      <Main devs={devs} />
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Main} />
+          <Route
+            path="/register"
+            component={() => (
+              <Register handleAddDev={handleAddDev} devs={devs} />
+            )}
+          />
+        </Switch>
+      </Router>
     </div>
   );
 }
