@@ -16,9 +16,9 @@ function setupWebSocket(server) {
       id: socket.id,
       coordinates: {
         latitude: Number(latitude),
-        longitude: Number(longitude),
-        techs: parseStringAsArray(techs)
-      }
+        longitude: Number(longitude)
+      },
+      techs: parseStringAsArray(techs)
     });
   });
 }
@@ -27,7 +27,7 @@ function findConnections(coordinates, techs) {
   return connections.filter(connection => {
     return (
       calculateDistance(coordinates, connection.coordinates) < 10 &&
-      connections.techs.some(item => techs.includes(item))
+      connection.techs.some(item => techs.includes(item))
     );
   });
 }
