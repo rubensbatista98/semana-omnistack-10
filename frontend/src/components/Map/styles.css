@@ -57,3 +57,31 @@
   font-size: 14px;
   margin-top: 5px;
 }
+
+.zoom-container {
+  width: 40px;
+  position: absolute;
+  bottom: 50px;
+  left: 45px;
+  border-radius: 5px;
+
+  z-index: 100;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.zoom-container > button {
+  flex: 1;
+  border: none;
+  padding: 10px 10px;
+  background-color: #c72424;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.zoom-container > button:last-child {
+  background-color: #ffffff;
+  color: #000000;
+}

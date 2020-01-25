@@ -7,7 +7,7 @@ import "./styles.css";
 function Main() {
   return (
     <main>
-      <Map width="100%" height="80vh" />
+      <Map width="100%" height="100vh" />
     </main>
   );
 }
