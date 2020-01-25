@@ -6,7 +6,7 @@ import { DevContext } from "../../context/DevContext";
 
 import "./styles.css";
 
-function Register({ handleAddDev }) {
+function Register() {
   const [devs] = useContext(DevContext);
 
   return (
@@ -14,7 +14,7 @@ function Register({ handleAddDev }) {
       <aside className="sidebar">
         <strong className="title">Cadastrar</strong>
 
-        <FormSignIn onSubmit={handleAddDev} />
+        <FormSignIn />
       </aside>
 
       <section className="devs-section">
