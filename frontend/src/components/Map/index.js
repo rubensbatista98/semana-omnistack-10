@@ -7,7 +7,7 @@ import { MapContext } from "../../context/MapContext";
 import "mapbox-gl/dist/mapbox-gl.css";
 import "./styles.css";
 
-const TOKEN = process.env.REACT_APP_MAPBOX_TOKEN;
+const TOKEN = process.env.REACT_APP_MAPBOX_TOKEN; // SUA ACCESS TOKEN
 const MAX_ZOOM = 18;
 const MIN_ZOOM = 5;
 
