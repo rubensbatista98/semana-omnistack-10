@@ -1,0 +1,59 @@
+.dev-marker {
+  position: relative;
+}
+
+.dev-marker > .avatar {
+  width: 54px;
+  height: 54px;
+  border: 4px solid #ffffff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.dev-marker > .dev-infos {
+  display: none;
+  z-index: 110;
+
+  width: 260px;
+  background-color: #ffffff;
+  padding: 5px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, calc(-100% - 10px));
+  border-radius: 5px;
+  cursor: pointer;
+}
+.dev-marker > .dev-infos::before {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  border: 10px solid transparent;
+  border-top-color: #ffffff;
+  transform: translateX(-50%);
+}
+.dev-marker.-show > .dev-infos {
+  display: block;
+}
+
+.dev-marker > .dev-infos > a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.dev-marker > .dev-infos .name {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.dev-marker > .dev-infos .bio {
+  font-size: 14px;
+  color: #666666;
+  margin-top: 5px;
+}
+
+.dev-marker > .dev-infos .techs {
+  font-size: 14px;
+  margin-top: 5px;
+}
