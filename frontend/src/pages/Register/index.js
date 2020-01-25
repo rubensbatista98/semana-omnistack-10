@@ -1,4 +1,6 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { Room } from "@material-ui/icons";
 
 import FormSignIn from "../../components/FormSignIn";
 import DevItem from "../../components/DevItem";
@@ -24,6 +26,10 @@ function Register() {
           ))}
         </ul>
       </section>
+
+      <Link to="/" className="action">
+        <Room fontSize="inherit" />
+      </Link>
     </section>
   );
 }
