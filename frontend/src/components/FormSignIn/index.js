@@ -4,7 +4,7 @@ import { DevContext } from "../../context/DevContext";
 
 import api from "../../services/api";
 
-import "./style.css";
+import "./styles.css";
 
 const FormSignIn = () => {
   const [devs, setDevs] = useContext(DevContext);
