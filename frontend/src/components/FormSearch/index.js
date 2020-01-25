@@ -1,13 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { MyLocation } from "@material-ui/icons";
+
+import { MapContext } from "../../context/MapContext";
 
 import "./styles.css";
 
-const FormSearch = () => {
+const FormSearch = ({ loadDevs }) => {
+  const [viewport] = useContext(MapContext);
   const [search, setSearch] = useState("");
 
   function handleSubmit(event) {
     event.preventDefault();
+
+    const { latitude, longitude } = viewport;
+
+    loadDevs({ techs: search, latitude, longitude });
   }
 
   return (

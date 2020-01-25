@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import MapGL, { Marker } from "react-map-gl";
 import { Add, Remove } from "@material-ui/icons";
+
+import { MapContext } from "../../context/MapContext";
 
 import "mapbox-gl/dist/mapbox-gl.css";
 import "./styles.css";
@@ -9,28 +11,8 @@ const TOKEN = process.env.REACT_APP_MAPBOX_TOKEN;
 const MAX_ZOOM = 18;
 const MIN_ZOOM = 5;
 
-const devs = [
-  {
-    _id: 2,
-    location: {
-      coordinates: [-46.801004000000006, -23.649491899999997]
-    },
-    avatar_url: "https://avatars1.githubusercontent.com/u/2254731?s=400&v=4",
-    name: "Diego Fernandes",
-    github_username: "diego3g",
-    bio: "Alguma coisa legal",
-    techs: ["ReactJS", "NodeJS"]
-  }
-];
-
-const Map = ({ width, height }) => {
-  const [viewport, setViewport] = useState({
-    width,
-    height,
-    latitude: -23.6517949,
-    longitude: -46.7962413,
-    zoom: 15
-  });
+const Map = ({ width, height, devs }) => {
+  const [viewport, setViewport] = useContext(MapContext);
 
   function zoomIn() {
     const { zoom } = viewport;
